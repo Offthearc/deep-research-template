@@ -160,8 +160,7 @@ cause is almost always a vague worker prompt — tighten the delegation in
     ├── agents/
     │   ├── research-subagent.md       # parallel worker (Sonnet)
     │   └── citation-agent.md          # final attribution pass (Opus)
-    ├── commands/
-    │   ├── deep-research.md            # /deep-research
-    │   └── research-resume.md          # /research-resume
-    └── settings.local.json            # web-fetch domain allowlist
+    └── commands/
+        ├── deep-research.md            # /deep-research
+        └── research-resume.md          # /research-resume
 ```
