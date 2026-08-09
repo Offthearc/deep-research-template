@@ -1,7 +1,7 @@
 ---
 name: research-subagent
 description: Parallel deep-research worker. Investigates ONE narrowly-scoped subtopic via web search and returns its complete findings inline (the Lead Orchestrator persists them to a findings file — workers do not write files). Designed to be spawned many-at-once. Not for trivial single-fact lookups (the lead handles those directly).
-tools: WebSearch, WebFetch
+tools: WebSearch, WebFetch, Read, Glob, Grep
 model: sonnet
 ---
 

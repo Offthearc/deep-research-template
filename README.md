@@ -1,10 +1,27 @@
+# SDD Harness + Deep Research for Claude Code
+
+This repo holds two related [Claude Code](https://claude.com/claude-code)
+harnesses:
+
+1. **The SDD/TDD harness** (the main artifact): a drop-in project template
+   for spec-driven, test-first development with two human gates (spec
+   approval + PR merge), a SQLite roadmap with a feature dependency graph,
+   worktree-based parallel implementation with a configurable agent cap, and
+   hook-enforced budgets/test rules. It lives in its own repo —
+   [Davidcparrar/harness-sdd](https://github.com/Davidcparrar/harness-sdd) —
+   checked out locally at `template/` (gitignored here). The design was
+   produced by a deep-research run — full rationale with 44 cited sources at
+   [`research/2026-08-03-sdd-harness/report.md`](research/2026-08-03-sdd-harness/report.md).
+2. **The deep-research harness** (this root's `CLAUDE.md` + `.claude/`):
+   turns the main session into a **Lead Orchestrator** that plans a research
+   question, fans it out to parallel worker agents, then synthesizes and
+   cites a full report. Documented below.
+
+---
+
 # Deep Research for Claude Code
 
-A drop-in [Claude Code](https://claude.com/claude-code) template that turns your
-main session into a **Lead Orchestrator** which plans a research question,
-fans it out to parallel worker agents, then synthesizes and cites a full report.
-
-It's the multi-agent research pattern — a planner that delegates to many
+The multi-agent research pattern — a planner that delegates to many
 narrowly-scoped workers — packaged as agents, slash commands, and an operating
 manual you can clone into any project.
 
@@ -154,13 +171,22 @@ cause is almost always a vague worker prompt — tighten the delegation in
 
 ```
 .
-├── CLAUDE.md                          # Lead Orchestrator operating manual
+├── CLAUDE.md                          # Lead Orchestrator operating manual (research)
 ├── README.md
-└── .claude/
-    ├── agents/
-    │   ├── research-subagent.md       # parallel worker (Sonnet)
-    │   └── citation-agent.md          # final attribution pass (Opus)
-    └── commands/
-        ├── deep-research.md            # /deep-research
-        └── research-resume.md          # /research-resume
+├── PROMPT.md                          # the design brief for the SDD harness
+├── .claude/
+│   ├── agents/
+│   │   ├── research-subagent.md       # parallel worker (Sonnet)
+│   │   └── citation-agent.md          # final attribution pass (Opus)
+│   └── commands/
+│       ├── deep-research.md            # /deep-research
+│       └── research-resume.md          # /research-resume
+├── research/
+│   └── 2026-08-03-sdd-harness/        # the run that designed the SDD harness
+│       ├── report.md                   #   cited design report (44 sources)
+│       ├── state.md                    #   run checkpoint
+│       └── findings/agent-{1..5}.md    #   raw worker findings
+└── template/                          # ⭐ the SDD/TDD harness — its own repo
+                                       #   (Davidcparrar/harness-sdd), checked
+                                       #   out here locally; gitignored
 ```
