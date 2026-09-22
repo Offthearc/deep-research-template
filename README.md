@@ -186,7 +186,10 @@ cause is almost always a vague worker prompt — tighten the delegation in
 │       ├── report.md                   #   cited design report (44 sources)
 │       ├── state.md                    #   run checkpoint
 │       └── findings/agent-{1..5}.md    #   raw worker findings
-└── template/                          # ⭐ the SDD/TDD harness — its own repo
-                                       #   (Davidcparrar/harness-sdd), checked
-                                       #   out here locally; gitignored
+├── template/                          # ⭐ the SDD/TDD harness — its own repo
+│                                      #   (Davidcparrar/harness-sdd), checked
+│                                      #   out here locally; gitignored
+└── template_rust/                     # the simplified Rust harness (2 agents,
+                                       #   3 commands, GitHub issues as roadmap);
+                                       #   its own repo, gitignored here
 ```
